@@ -1,0 +1,33 @@
+.main {
+  display: flex;
+  background-color: white;
+}
+.form {
+  width: 332px;
+  height: 632px;
+  left: 607px;
+  top: 155px;
+}
+
+.LogImg {
+  position: absolute;
+  width: 632px;
+  height: 532px;
+  left: 607px;
+  top: 155px;
+}
+.secondMain {
+  background-color: white;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"],
+button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}

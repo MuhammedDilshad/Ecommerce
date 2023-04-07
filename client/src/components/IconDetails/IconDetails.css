@@ -1,0 +1,8 @@
+.IconDetails {
+  margin-top: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
+  gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(251px, 4fr));
+}
