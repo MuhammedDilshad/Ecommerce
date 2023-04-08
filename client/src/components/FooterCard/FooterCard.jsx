@@ -4,8 +4,8 @@ import "./FooterCard.css";
 const FooterCard = (props) => {
   let info = props.value.data;
   return (
-    <div className="pointss">
-      <h4>{props.value.header}</h4>
+    <div className="">
+      <strong>{props.value.header}</strong>
       <div>
         {info.map((value) => (
           <p>{value}</p>

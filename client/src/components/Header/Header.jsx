@@ -1,11 +1,10 @@
-import React from "react";
-import user from "../../img/user1.png";
-import menu from "../../img/menu 1.png";
-import cart from "../../img/cart.png";
+import React, { useState } from "react";
+
 import { logout } from "../../actions/AuthActions";
 import { FiUser } from "react-icons/fi";
 import { FiShoppingBag } from "react-icons/fi";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { useNavigate } from "react-router-dom";
 
 import "./Header.css";
 import { useDispatch } from "react-redux";
@@ -15,15 +14,21 @@ export default function Header() {
   const handleLogout = () => {
     dispatch(logout());
   };
+  const navigate = useNavigate();
   return (
     <div className="main">
       <div>
         <h1>ECloths</h1>
       </div>
       <div className="mainContent">
-        <span>HOME</span>
-        <span>ABOUT</span>
-        <span>CONTACT US</span>
+        <strong
+          style={{ cursor: "pointer", color: "blue" }}
+          onClick={() => navigate("/home")}
+        >
+          HOME
+        </strong>
+        <strong>ABOUT</strong>
+        <strong>CONTACT US</strong>
       </div>
       <div className="mainContent">
         <button className="btnOne">ORDER HISTORY</button>

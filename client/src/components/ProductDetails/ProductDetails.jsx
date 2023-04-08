@@ -7,6 +7,7 @@ import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
+import { useNavigate } from "react-router-dom";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 
 import "./ProductDetails.css";
@@ -14,7 +15,7 @@ import ProDiscription from "../ProDiscription/ProDiscription";
 
 const ProductDetails = ({ id }) => {
   const [age, setAge] = useState("");
-
+  const navigate = useNavigate();
   const handleChange = (event) => {
     setAge(event.target.value);
   };
@@ -59,7 +60,12 @@ const ProductDetails = ({ id }) => {
             </Box>
           </div>
 
-          <button className="crtBtn">ADD TO CART</button>
+          <button
+            className="crtBtn"
+            onClick={() => navigate(`/Cart/${data.dataId}`)}
+          >
+            ADD TO CART
+          </button>
           <p>Category:{data.Category}</p>
           <p>Tags:Modern,Design,cotton</p>
           <div>

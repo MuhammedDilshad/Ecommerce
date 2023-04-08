@@ -1,8 +1,31 @@
 .Footer {
+  text-align: left;
   margin-top: 50px;
-  margin-left: 10px;
-  margin-right: 10px;
   gap: 30px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(251px, 4fr));
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.footrft {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 50px;
+}
+.ft {
+  color: gray;
+  text-align: left;
+  display: grid;
+}
+.icic {
+  color: gray;
+  display: flex;
+  gap: 30%;
+}
+.hr {
+  margin-left: 5%;
+  margin-right: 5%;
 }

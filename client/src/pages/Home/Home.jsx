@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Header from "../../components/Header/Header";
 import Banner from "../../components/Banner/Banner";
 import Product from "../../components/Product/Product";
@@ -8,14 +8,19 @@ import TopSellers from "../../components/TopSellers/TopSellers";
 import Footer from "../../components/Footer/Footer";
 
 function Home() {
+  const productRef = useRef(null);
+
+  const scrollToProduct = () => {
+    productRef.current.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <div>
       <Header />
-      <Banner />
-      <Product />
+      <Banner scrollToProduct={scrollToProduct} />
+      <Product ref={productRef} />
       <IconDetails />
-      <Advertmnt />
-      <TopSellers />
+      <Advertmnt scrollToProduct={scrollToProduct} />
+      <TopSellers scrollToProduct={scrollToProduct} />
       <Footer />
     </div>
   );
