@@ -4,28 +4,28 @@
   gap: 30px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(251px, 4fr));
+}
+.mFoot {
   margin-left: 5%;
   margin-right: 5%;
 }
 .footrft {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(251px, 2fr));
   margin-top: 50px;
-  display: flex;
   justify-content: space-between;
-  margin-left: 5%;
-  margin-right: 5%;
   margin-bottom: 50px;
 }
 .ft {
-  color: gray;
   text-align: left;
-  display: grid;
 }
 .icic {
   color: gray;
   display: flex;
-  gap: 30%;
+  gap: 10%;
+  justify-content: end;
 }
-.hr {
+/* .hr {
   margin-left: 5%;
   margin-right: 5%;
-}
+} */

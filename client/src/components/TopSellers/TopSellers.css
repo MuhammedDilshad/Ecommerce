@@ -8,9 +8,9 @@
 .Top {
   margin-top: 100px;
 }
-.NewBt {
+.shopnowbt {
   margin-top: 100px;
-  width: 150px;
+  padding: 10px;
   border-radius: 0;
-  background-color: blue;
+  background-color: #024e82;
 }

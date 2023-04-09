@@ -1,22 +1,22 @@
-.main {
+.mainheader {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  background-color: #f0f0f0;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 1%;
+  margin-bottom: 2%;
 }
 
-.main h1 {
+.mainheader h1 {
   margin: 0;
   font-size: 36px;
 }
 
 .mainContent {
   display: flex;
-  align-items: center;
-  width: fit-content;
-  height: fit-content;
-  display: flex;
+  justify-content: space-between;
+
   gap: 20px;
 }
 
@@ -24,25 +24,49 @@
   margin: 0;
   font-size: 18px;
   font-weight: normal;
-  text-transform: uppercase;
 }
 .iconss {
-  height: 60px;
+  height: 50px;
 }
-.btnOne {
-  border: 2px solid black;
+.hbtnOne {
+  border: 1px solid black;
   background-color: white;
   color: black;
   border-color: black;
-  width: fit-content;
+  padding: 10px;
   border-radius: 0;
 }
-.btnTwo {
+.hbtnTwo {
   color: blue;
   background-color: white;
   border-color: #024e82;
   border-radius: 50px;
-  width: fit-content;
+  padding: 10px;
   border: 2px solid rgb(18, 53, 207);
   background-color: white;
+}
+@media only screen and (max-width: 768px) {
+  .mainContent {
+    gap: 0;
+  }
+}
+@media only screen and (max-width: 632px) {
+  .mainheader h1 {
+    font-size: 14px;
+  }
+  .mainContent strong {
+    font-size: 10px;
+  }
+  .hbtnOne,
+  .hbtnTwo {
+    padding: 5px;
+    font-size: 12px;
+  }
+}
+@media only screen and (max-width: 334px) {
+  .hbtnOne,
+  .hbtnTwo {
+    font-size: 10px;
+    padding: 0 !important;
+  }
 }

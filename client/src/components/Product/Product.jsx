@@ -5,7 +5,7 @@ import "./Product.css";
 
 function Product() {
   return (
-    <div id="product">
+    <div className="Prodct" id="product">
       <div>
         <h2>Discover NEW Arrivals</h2>
         <p>Recently added shirts</p>

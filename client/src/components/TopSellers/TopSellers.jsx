@@ -19,7 +19,7 @@ function TopSellers() {
           <TopSellersCard value={value} />
         ))}
       </div>
-      <button onClick={handleClick} className="NewBt">
+      <button onClick={handleClick} className="shopnowbt">
         SHOP NOW
       </button>
     </div>

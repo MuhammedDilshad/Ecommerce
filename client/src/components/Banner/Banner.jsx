@@ -13,7 +13,7 @@ function Banner() {
     <div className="Bnr">
       <img src={banner} alt="" />
       <img className="quate" src={bannerq} alt="" />
-      <button onClick={handleClick} className="Bnt">
+      <button onClick={handleClick} className="bannerBnt">
         SHOP NOW
       </button>
     </div>

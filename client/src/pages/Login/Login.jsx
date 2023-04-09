@@ -3,21 +3,36 @@ import Logo from "../../img/Frame.png";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { logIn } from "../../actions/AuthActions";
+import { HiOutlineMail } from "react-icons/hi";
+import { RiLockPasswordLine } from "react-icons/ri";
+import * as Yup from "yup";
 
 import "./Login.css";
 
 function Login() {
+  const [error, setErr] = useState("");
   const [values, setValues] = useState({
     email: "",
     password: "",
   });
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const schema = Yup.object().shape({
+    email: Yup.string().email().required(),
+    password: Yup.string().min(5).required(),
+  });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    try {
+      await schema.validate(values, { abortEarly: false });
+      dispatch(logIn(values));
+    } catch (error) {
+      setErr(error.errors);
+      console.log("Validation error:", error.errors);
+    }
 
-    dispatch(logIn(values));
+    // dispatch(logIn(values));
   };
 
   const handleChange = (e) => {
@@ -31,30 +46,46 @@ function Login() {
           <div>
             <h4>Login into your account</h4>
             <label htmlFor="">Email Address</label>
-            <input
-              onChange={handleChange}
-              placeholder="email"
-              required="true"
-              name="email"
-              type="email"
-            />
+            <div className="pswd">
+              <input
+                onChange={handleChange}
+                placeholder="email"
+                required="true"
+                name="email"
+                type="email"
+              />
+              <HiOutlineMail className="icon" />
+            </div>
             <label htmlFor="">Password</label>
-            <input
-              onChange={handleChange}
-              name="password"
-              type="password"
-              placeholder="password"
-              required="true"
-            />
+            <div className="pswd">
+              <input
+                onChange={handleChange}
+                name="password"
+                type="password"
+                placeholder="password"
+                required="true"
+              />
+              <RiLockPasswordLine className="icon" />
+            </div>
+            <p className="forgot-password">Forgot Password?</p>
 
-            <button className="loginButton">Login</button>
-            <button className="loginButton" onClick={() => navigate("/signup")}>
-              Signup
+            <button className="loginButton">Login Now</button>
+            {error ? <small style={{ color: "red" }}>{error[0]}</small> : null}
+            <div class="hror">
+              <hr />
+              <span>or</span>
+              <hr />
+            </div>
+            <button
+              className="SignupButton"
+              onClick={() => navigate("/signup")}
+            >
+              Signup Now
             </button>
           </div>
         </form>
       </div>
-      <div>
+      <div className="loginlogo">
         <img src={Logo} alt="" />
       </div>
     </div>

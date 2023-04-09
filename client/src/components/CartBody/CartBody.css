@@ -40,4 +40,18 @@
   width: fit-content;
   border-radius: 0;
   background: #fd7401;
+  padding: 10px;
+}
+@media only screen and (max-width: 430px) {
+  .mainItems h4 {
+    font-size: 14px;
+  }
+  .mainContent strong {
+    font-size: 10px;
+  }
+  .hbtnOne,
+  .hbtnTwo {
+    padding: 5px;
+    font-size: 12px;
+  }
 }

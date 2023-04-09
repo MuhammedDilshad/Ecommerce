@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { logout } from "../../actions/AuthActions";
 import { FiUser } from "react-icons/fi";
@@ -16,7 +16,7 @@ export default function Header() {
   };
   const navigate = useNavigate();
   return (
-    <div className="main">
+    <div className="mainheader">
       <div>
         <h1>ECloths</h1>
       </div>
@@ -31,11 +31,11 @@ export default function Header() {
         <strong>CONTACT US</strong>
       </div>
       <div className="mainContent">
-        <button className="btnOne">ORDER HISTORY</button>
+        <button className="hbtnOne">ORDER HISTORY</button>
         <FiUser className="iconss" />
         <FiShoppingBag className="iconss" />
         <GiHamburgerMenu className="iconss" />
-        <button onClick={handleLogout} className="btnTwo">
+        <button onClick={handleLogout} className="hbtnTwo">
           SIGN OUT
         </button>
       </div>
